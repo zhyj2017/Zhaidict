@@ -9,10 +9,7 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -57,5 +54,14 @@ public class UserController {
         map.put("learnedWords",user.getLearned());
         String str = mapper.writeValueAsString(map);
         return str;
+    }
+
+    /**
+     * TODO 修改用户配置
+     */
+    @RequestMapping(value = "/config",produces = "application/json;charset=utf-8",method= RequestMethod.POST)
+    @ResponseBody
+    public void updateConfig(@RequestBody User user){
+        userService.update(user);
     }
 }
