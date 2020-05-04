@@ -1,0 +1,18 @@
+spring:
+  mvc:
+    view:
+      prefix: /WEB-INF/views/
+      suffix: .jsp
+  #  datasource:
+  #    url: jdbc:mysql://127.0.0.1:3306/tmall?useUnicode=true&characterEncoding=UTF-8&useSSL=false
+  #    driverClassName: com.mysql.jdbc.Driver
+  #    username: root
+  #    password:123456  datasource:
+    url: jdbc:mysql://127.0.0.1:3306/zhaidict?useUnicode=true&characterEncoding=UTF-8&useSSL=false
+    driverClassName: com.mysql.jdbc.Driver
+    username: root
+    password: zyj323174abc
+  jpa:
+    hibernate:
+      ddl-auto: update  #新增连接数据库的必备参数
+
